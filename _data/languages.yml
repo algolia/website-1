@@ -10,6 +10,10 @@
   tag: ar
   enabled: No
   accept_languages: ["ar-sa", "ar-iq", "ar-eg", "ar-ly", "ar-dz", "ar-ma", "ar-tn", "ar-om", "ar-ye", "ar-sy", "ar-jo", "ar-lb", "ar-kw", "ar-ae", "ar-bh", "ar-qa"]
+- name: Bosanski
+  tag: bs-BA
+  enabled: No
+  accept_languages: ["bs-BA"]
 - name: Català
   tag: ca
   enabled: No
@@ -44,7 +48,7 @@
   accept_languages: ["fi"]
 - name: Français
   tag: fr
-  enabled: No
+  enabled: Yes
   accept_languages: ["fr", "fr-be", "fr-ca", "fr-ch", "fr-lu"]
 - name: עִברִית
   tag: he
