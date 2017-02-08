@@ -23,14 +23,15 @@ serve-production: test-bundler test-yarn
 build-production: test-bundler test-yarn
 	@make crowdin-download
 	@NODE_ENV=production yarn run build& JEKYLL_ENV=production bundle exec jekyll build
+	@ruby ./scripts/validate-translations.rb
 
 crowdin-upload: test-crowdin
 	@crowdin-cli upload sources --auto-update -b master
 
 crowdin-download: test-crowdin
 	@crowdin-cli download -b master
-	@ruby ./scripts/normalize-frontmatter.rb
-	@ruby ./scripts/normalize-toc.rb
+	@ruby ./scripts/remove-unused-languages.rb
+	@ruby ./scripts/normalize-translations.rb
 
 ###
 # Misc stuff:
