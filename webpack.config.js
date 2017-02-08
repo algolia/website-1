@@ -1,9 +1,16 @@
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './js/src/index.js',
+  entry: {
+    common: './js/src/common.js',
+    documentation: './js/src/documentation.js',
+    install: './js/src/install.js',
+    nightly: './js/src/nightly.js',
+    search: './js/src/search.js',
+  },
   output: {
-    filename: './js/build/index.js'
+    path: './js/build',
+    filename: '[name].js',
   },
   module: {
     rules: [
