@@ -96,7 +96,7 @@ class Details extends Component {
             base: 'https://raw.githubusercontent.com',
             user: this.state.githubRepo.user,
             project: this.state.githubRepo.project,
-            head: this.state.gitHead ? this.state.gitHead : 'master',
+            head: this.state.githubRepo.head,
             path: this.state.githubRepo.path.replace(/\/tree\//, ''),
           }),
           type: 'text',
@@ -129,7 +129,6 @@ class Details extends Component {
           <Markdown
             source={this.state.readme}
             githubRepo={this.state.githubRepo}
-            gitHead={this.state.gitHead}
           />
         </ReadMore>
       );
@@ -177,7 +176,6 @@ class Details extends Component {
                 <Markdown
                   source={this.state.changelog}
                   githubRepo={this.state.githubRepo}
-                  gitHead={this.state.gitHead}
                 />
               </ReadMore>
             </section>}
@@ -199,7 +197,6 @@ class Details extends Component {
       <Aside
         name={this.state.name}
         githubRepo={this.state.githubRepo}
-        gitHead={this.state.gitHead}
         homepage={this.state.homepage}
         contributors={this.state.owners}
         activity={this.state.activity}

@@ -7,7 +7,7 @@ import { prefixURL } from '../util';
 marked.Lexer.rules.gfm.heading = marked.Lexer.rules.normal.heading;
 marked.Lexer.rules.tables.heading = marked.Lexer.rules.normal.heading;
 
-const renderAndEscapeMarkdown = ({ source, githubRepo, gitHead }) => {
+const renderAndEscapeMarkdown = ({ source, githubRepo }) => {
   const renderer = new marked.Renderer();
 
   if (githubRepo) {
@@ -17,7 +17,7 @@ const renderAndEscapeMarkdown = ({ source, githubRepo, gitHead }) => {
         base: 'https://raw.githubusercontent.com',
         user,
         project,
-        head: gitHead ? gitHead : 'master',
+        head: head ? head : 'master',
         path,
       })}" title="${title}" alt="${text}"/>`;
     };
@@ -27,7 +27,7 @@ const renderAndEscapeMarkdown = ({ source, githubRepo, gitHead }) => {
         base: 'https://github.com',
         user,
         project,
-        head: gitHead ? `tree/${gitHead}` : 'tree/master',
+        head: head ? `tree/${head}` : 'tree/master',
         path,
       })}" title="${title}">${text}</a>`;
     };
@@ -38,13 +38,12 @@ const renderAndEscapeMarkdown = ({ source, githubRepo, gitHead }) => {
   return escaped;
 };
 
-const Markdown = ({ source, githubRepo, gitHead }) => (
+const Markdown = ({ source, githubRepo }) => (
   <article
     dangerouslySetInnerHTML={{
       __html: renderAndEscapeMarkdown({
         source,
         githubRepo,
-        gitHead,
       }),
     }}
   />

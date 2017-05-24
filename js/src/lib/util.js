@@ -137,16 +137,16 @@ function parseHighlightedAttribute({
   return elements;
 }
 
-export function packageJSONLink({ githubRepo, gitHead }) {
+export function packageJSONLink(githubRepo) {
   if (githubRepo) {
-    const { user, project, path } = githubRepo;
+    const { user, project, path, head } = githubRepo;
 
     return {
       packageJSONLink: prefixURL('package.json', {
         base: 'https://github.com',
         user,
         project,
-        head: gitHead ? `tree/${gitHead}` : 'tree/master',
+        head: `tree/${head}`,
         path,
       }),
     };

@@ -13,7 +13,6 @@ const Aside = ({
   name,
   homepage,
   githubRepo,
-  gitHead,
   contributors,
   activity,
   downloads,
@@ -63,7 +62,7 @@ const Aside = ({
     <Usage
       dependencies={dependencies}
       devDependencies={devDependencies}
-      {...packageJSONLink({ githubRepo, gitHead })}
+      {...packageJSONLink(githubRepo)}
     />
     <Versions versions={versions} />
     <article className="details-side--contributors">
