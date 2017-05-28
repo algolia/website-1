@@ -8,15 +8,72 @@ categories : announcements
 share_text : "An in-depth look in the search on Yarn"
 ---
 
-It's been here for a while now, you can search for packages on the Yarn website. But let's go in detail on how it is made and what this actually means for the community. The package search for all Yarn (and thus npm) packages has been made by [Algolia](https://algolia.com) developers and is provided as a service for the Yarn website.
+Since December 2016, you can [search for JavaScript packages](https://yarnpkg.com/en/packages/) on the Yarn website. But we never talked about how it happened, what makes it different from other packages searches and what does it means for the community.
+
+## How it happened
+
+Search on the yarn website started with our documentation, we wanted people to easily find information on how to use Yarn. As other programming community websites we went for [DocSearch](https://community.algolia.com/docsearch/), this was covered in [yarnpkg/website#105](https://github.com/yarnpkg/website/pull/105).
+
+Then another Yarn contributor ([@thejameskyle](https://github.com/thejameskyle)) asked in [yarnpkg/website#194] if we should get package searching abilities, much like [npm](http://npmjs.com/) had. We wanted something different in term of ranking and also display package details in a way that was re-thought.
+
+This is where [Algolia](https://www.algolia.com/), the company I work for, comes into play. As a developer-focused search engine API, we were already fan of Yarn and wanted a cool hack for our end of the year (2016) gift.
+
+On the 22nd December of 2016, Algolia engineers via [yarnpkg/website#322](https://github.com/yarnpkg/website/pull/322) then ten days later it got merged and instant-search for JavaScript packages was available on our website. At first there was no package details pages.
+
+Early 2017, the core team of Yarn and Algolia team met for a one day brainstorming in London. The goal was to think about the package details page and evolutions of the search interface. Algolia proposed [invision](https://www.invisionapp.com/) design views of what search could be and from that we drafted a [master plan](https://gist.github.com/vvo/c801fb8b653eda9fb17de60987476b5e)!
+
+## What makes it different
+
+### Show results ⚡️ instantly
+
+![demo of the Yarn search](https://dl.dropboxusercontent.com/u/3508235/2017-05-28%2022.37.08.gif)
+
+Much like [Google instant](https://googleblog.blogspot.fr/2010/09/search-now-faster-than-speed-of-type.html) search. You should never have to wait for search results to be displayed: **just type and see results** being displayed immediately.
+
+### Display many metadata context
+
+After using npm search many times, we knew what was missing and what was superfluous from the search results and package detail pages. We brainstormed a bit and iterations after iterations added many useful metadata.
+
+Here's a comparison between the two search results pages (npm on the left, Yarn on the right):
+
+![npm search results on the left, Yarn search results on the right](https://dl.dropboxusercontent.com/u/3508235/npm-yarn-search.png)
+
+Some metadata the Yarn search is providing on search results that npm does not:
+- number of downloads indicator
+- license of the package
+- Current GitHub organization maintaining the package if any (rather than the last publisher or creator)
+- last time package was updated
+- tags
+- npm link, homepage and GitHub homepage when relevant
+
+This metadata helps us not having to open many package detail page before getting the information you want (like the GitHub homepage of a package).
+
+For the **package detail page**, we took a similar approach:
+
+
+
+## How it works
+
+The first step to providing search for JavaScript packages is to replicate and monitor changes from the npm registry into an Algolia search index.
+
+This replication code is all open-source and available at [algolia/npm-search](https://github.com/algolia/npm-search). The most important API being used here is the [npm replication](https://docs.npmjs.com/misc/registry) API.
+
+The npm registry is backed by [CouchDB](http://couchdb.apache.org/) and using its [replication protocol](http://docs.couchdb.org/en/master/replication/protocol.html)
+
+The process is divided in two major phases. The first is the bootstrap phase where we go over all packages in the npm registry via [replicate.npmjs.com](https://docs.npmjs.com/misc/registry) . The second phase is the "watch" step. Because the npm registry is a cou​chdb database, it implements a feed that will be updated on every update in the database. By using [pouchdb](https://yarnpkg.com/en/package/pouchdb-http), we can use this endpoint and keep our replica in sync. You can read more about the "" in the documentation of [couchdb](https://yarnpkg.com/en/package/pouchdb-http). 
+
+The package search for all Yarn (and thus npm) packages has been made by [Algolia](https://algolia.com) developers and is provided as a service for the Yarn website.
 
 The project started in December 2016 by [Vincent Voyer](https://github.com/vvo), and was continued from February by me ([Haroen Viaene](https://github.com/Haroenv)), when we moved to put the search bar available on every page, and make a detail page.
 
+## What makes it different
+
+## What we learned
+
 ## Indexing
 
-Algolia is a Search as a Service, which means that before being able to search in the data, it needs to be indexed. The indexer used to get data from npm and other sources is available on GitHub at [algolia/npm-search](https://github.com/algolia/npm-search). The most important API being used here is the npm [replicate](https://docs.npmjs.com/misc/registry) API.
 
-The process is divided in two ​​​major phases. The first is the bootstrap phase where we go over all packages in the npm registry via [replicate.npmjs.com](https://docs.npmjs.com/misc/registry) . The second phase is the "watch" step.​​ Because the npm registry is a cou​chdb database, it implements a feed that will be updated on every update in the database. By using [pouchdb](https://yarnpkg.com/en/package/pouchdb-http), we can use this endpoint and keep our replica in sync. Y​ou can read more about the "" in the documentation of [couchdb](https://yarnpkg.com/en/package/pouchdb-http). 
+
 
 Both​ phases go through ​the same steps per package, ​​but the bootstrap ​phase does them in batches. The steps are as follow​s: 
 
@@ -125,3 +182,4 @@ In the end we achieve a schema that looks like this for repositories with all da
 
 ## Reuse
 
+https://discourse.algolia.com/t/2016-algolia-community-gift-yarn-package-search/319
