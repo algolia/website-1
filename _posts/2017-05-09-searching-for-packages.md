@@ -12,7 +12,7 @@ Since December 2016, you can [search for JavaScript packages](https://yarnpkg.co
 
 ## How it happened
 
-Search on the yarn website started with our documentation, we wanted people to easily find information on how to use Yarn. As other programming community websites we went for [DocSearch](https://community.algolia.com/docsearch/), this was covered in [yarnpkg/website#105](https://github.com/yarnpkg/website/pull/105).
+Search on the Yarn website started with our documentation, we wanted people to easily find information on how to use Yarn. As other programming community websites we went for [DocSearch](https://community.algolia.com/docsearch/), this was covered in [yarnpkg/website#105](https://github.com/yarnpkg/website/pull/105).
 
 Then another Yarn contributor ([@thejameskyle](https://github.com/thejameskyle)) asked in [yarnpkg/website#194] if we should get package searching abilities, much like [npm](http://npmjs.com/) had. We wanted something different in term of ranking and also display package details in a way that was re-thought.
 
@@ -30,9 +30,9 @@ Early 2017, the core team of Yarn and Algolia team met for a one day brainstormi
 
 Much like [Google instant](https://googleblog.blogspot.fr/2010/09/search-now-faster-than-speed-of-type.html) search. You should never have to wait for search results to be displayed: **just type and see results** being displayed immediately.
 
-### Display many metadata context
+### Display a lot of metadata context
 
-After using npm search many times, we knew what was missing and what was superfluous from the search results and package detail pages. We brainstormed a bit and iterations after iterations added many useful metadata.
+After using npm search many times, we knew what was missing and what was superfluous from the search results and package detail pages. We brainstormed a bit and iteratively added many useful metadata.
 
 Here's a comparison between the two search results pages (npm on the left, Yarn on the right):
 
@@ -45,11 +45,22 @@ Some metadata the Yarn search is providing on search results that npm does not:
 - last time package was updated
 - tags
 - npm link, homepage and GitHub homepage when relevant
+- deprecation message
 
 This metadata helps us not having to open many package detail page before getting the information you want (like the GitHub homepage of a package).
 
-For the **package detail page**, we took a similar approach:
+For the **package detail page**, we took a similar approach. We started with the same metadata as npm shows, but show some other information as well. Information not visible in npm, which we decided to show in Yarn:
 
+- Changelog
+- GitHub stargazers
+- Commit activity
+- description
+- deprecation message
+- devDependencies
+- browsing of the files
+- previous versions
+
+There's more data in the Algolia index than is shown, as well as some data that is being fetched from the frontend. As with everything, this is an iterative process, and changes are definitely welcome!
 
 
 ## How it works
