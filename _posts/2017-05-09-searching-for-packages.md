@@ -239,4 +239,4 @@ This was made by two colleagues at Algolia, [Gianluca](https://twitter.com/proud
 // todo: gif
 ![searching on jsDelivr]()
 
-jsDelivr is free CDN for all packages on npm. They have been using Algolia since before this index existed, but switched to reuse this index when they switched to their [new architecture]().
+jsDelivr is free CDN for all packages on npm. They have been using Algolia since before this index existed, but switched to reuse this index when they switched to their [new architecture](https://www.jsdelivr.com/blog/jsdelivr-reloaded-2017/).
