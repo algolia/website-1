@@ -215,6 +215,13 @@
   - id: docs_workspaces
     path: /docs/workspaces
 
+- id: docs_reusing_yarn_search
+  title: docs_reusing_yarn_search_title
+  description: docs_reusing_yarn_search_description
+  pages:
+  - id: docs_reusing_yarn_search
+    path: /docs/reusing-yarn-search
+
 - id: yarn_organization
   title: yarn_organization_title
   description: yarn_organization_description
