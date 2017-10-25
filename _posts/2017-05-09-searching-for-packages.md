@@ -219,8 +219,8 @@ What we currently made for the Yarn website is a proof of concept. We believe in
 
 Right now we don't have an automated system for giving out API keys yet, but you can request one by [filling out the form](//todo: the form). You will then get an Algolia API key for the search index with `search` and `browse` as capabilities. You can read more about how to use this on the [main documentation](https://www.algolia.com/doc/) of Algolia.
 
-// todo: button
-<a href="" class="btn">Request an API key here</a>
+// todo: correct link
+<a href="/en/docs/reusing-yarn-search" class="btn btn-primary">Request an API key here</a>
 
 There are already two other projects made with the packages API:
 
