@@ -10,9 +10,9 @@ share_text : "An in-depth look in the search on Yarn"
 
 Since December 2016, you can [search for JavaScript packages](https://yarnpkg.com/en/packages/) on the Yarn website. But we never talked about [how it happened](#how-it-happened), what [makes it different](#what-makes-it-different) from other package search interfaces, [how it's made](#how-it-works) and [what it means for the community](#what-about-the-future).
 
-## How it happened
+## The story behind the search
 
-Search on the Yarn website started with our documentation, we wanted people to easily find information on how to use Yarn. As other programming community websites we went for [DocSearch](https://community.algolia.com/docsearch/), this was covered in [yarnpkg/website#105](https://github.com/yarnpkg/website/pull/105).
+Search on the Yarn website started with the documentation, we wanted people to easily find information on how to use Yarn. As other programming community websites we went for [DocSearch](https://community.algolia.com/docsearch/), this was covered in [yarnpkg/website#105](https://github.com/yarnpkg/website/pull/105).
 
 Then another Yarn contributor ([@thejameskyle](https://github.com/thejameskyle)) asked in [yarnpkg/website#194](https://github.com/yarnpkg/website/issue/194) if we should get package searching abilities, much like [npm](http://npmjs.com/) had. We wanted something different in term of ranking and also display package details in a way that was re-thought.
 
