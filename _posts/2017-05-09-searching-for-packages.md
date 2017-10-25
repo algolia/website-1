@@ -174,6 +174,7 @@ In the end we achieve a schema that looks like this for repositories with all da
 ```
 
 We also configured two of those attributes as [`attributesForFaceting`](https://www.algolia.com/doc/guides/searching/faceting/#declaring-attributes-for-faceting): `owner.name` and `keywords`. This means that if you're searching for packages within a certain owner, for example `sindresorhus` or with a keyword like `angular` you'll be able to only get results that are relevant to you.
+
 ### Detail page
 
 To make the detail page, we wanted some information that was harder to crawl for a huge dataset as the complete registry, using the GitHub and unpkg APIs: 
@@ -189,26 +190,33 @@ The stargazers and commit activity are fetched with the GitHub API without a spe
 
 ## What it means for the community
 
-What we currently made for the Yarn website is a proof of concept. We believe in the power of community and allow anyone to use the search index made by us to be used for logical or off-the-charts 🆒 ideas. 
+What we currently made for the Yarn website is a proof of concept. We believe in the power of community and allow anyone to use the search index made by us to be used for logical or off-the-charts 🆒 ideas.
 
-// todo: explain how to use it and link to the page
+Right now we don't have an automated system for giving out API keys yet, but you can request one by [filling out the form](//todo: the form). You will then get an Algolia API key for the search index with `search` and `browse` as capabilities. You can read more about how to use this on the [main documentation]() of Algolia.
 
-There are already two other projects made with the packages API: 
+// todo: button
+<a href="" class="btn">Request an API key here</a>
+
+There are already two other projects made with the packages API:
 
 ### Atom npm autocomplete
-
-➡️ GitHub
-➡️ Atom marketplace
-➡️ blogpost
+// todo: links
+➡️ [GitHub]()
+➡️ [Atom marketplace]()
+➡️ [blogpost]()
 
 // todo: gif
 ![importing a package with atom npm autocomplete]()
 
 // todo: links
-This was made by two colleagues at Algolia, [Gianluca]() and [Raymond]()
+This was made by two colleagues at Algolia, [Gianluca]() and [Raymond]() after having the idea during a Happy Hour. It allows you to search for packages inline in your editor, and install it with Yarn or npm.
 
-### JSDelivr search
+### jsDelivr search
+// todo: links
+➡️ [live]()
+➡️ [GitHub]()
 
-## Reuse
+// todo: gif
+![searching on jsDelivr]()
 
-https://discourse.algolia.com/t/2016-algolia-community-gift-yarn-package-search/319
+jsDelivr is free CDN for all packages on npm. They have been using Algolia since before this index existed, but switched to reuse this index when they switched to their [new architecture]().
