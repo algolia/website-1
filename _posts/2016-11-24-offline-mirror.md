@@ -178,8 +178,8 @@ The “Offline Mirror” can be shared between build servers or development mach
 
 Whether to commit binary files into a repository or not depends on the number and size of your project's dependencies.
 For example, out of 849 React Native dependencies totaling 23MB, only 10% are larger than 30KB.
-![list of React Native .tgz files sorted by size descending](/assets/posts/2016-11-24-offline-mirror/yarn-offline-blog-offline-mirror-list.png){:style="max-width: 700px"}
-![Size of all .tgz files used in React Native](/assets/posts/2016-11-24-offline-mirror/yarn-offline-blog-offline-mirror-size.png){:style="max-width: 700px"}
+![list of React Native .tgz files sorted by size descending](/assets/posts/2016-11-24-offline-mirror/yarn-offline-blog-offline-mirror-list.png){:class="img-fluid"}
+![Size of all .tgz files used in React Native](/assets/posts/2016-11-24-offline-mirror/yarn-offline-blog-offline-mirror-size.png){:class="img-fluid"}
 
 Many Facebook teams, including the React Native team, decided to check in their “Offline mirror”.
 They all share the same “Offline mirror” which means that most dependencies for new projects are often already checked into that folder, so the cost of storing the packages in source control gets lower the more projects use it.
@@ -265,7 +265,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ### Did you know that Yarn is also distributed as a single bundle JS file in [releases](https://github.com/yarnpkg/yarn/releases) that can be used on CI systems without internet access?
 
-![Files distributed with Yarn releases](/assets/posts/2016-11-24-offline-mirror/yarn-offline-blog-releases.png){:style="max-width: 700px"}
+![Files distributed with Yarn releases](/assets/posts/2016-11-24-offline-mirror/yarn-offline-blog-releases.png){:class="img-fluid"}
 **yarn-<version>.js** (for Node 5+) and **yarn-legacy-<version>.js** (for Node 4) can be used stand-alone in CI systems without a need to install it.
 
 Just check it into your project's repository and use it in the build script:
