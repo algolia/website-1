@@ -146,7 +146,7 @@ In the end we achieve a schema that looks like this for repositories with all da
     "path": "/tree/master/packages/babel-core",
     "head": "master"
   },
-  "readme": "# babel-core\n\n> Babel compiler core.\n\n\n [... truncated at 200kb]",
+  "readme": "# babel-core\n\n> Babel compiler core. [... truncated at 200kb]",
   "owner": { // either GitHub owner or npm owner
     "name": "babel",
     "avatar": "https://github.com/babel.png",
@@ -192,7 +192,8 @@ In the end we achieve a schema that looks like this for repositories with all da
   "popularName": "babel-core",
   "dependents": 3321,
   "humanDependents": "3.3k",
-  "changelogFilename": null, // if babel-core had a changelog, it would be the raw GitHub url here
+  // if babel-core had a changelog, it would be the raw GitHub url here
+  "changelogFilename": null,
   "objectID": "babel-core"
 }
 ```
