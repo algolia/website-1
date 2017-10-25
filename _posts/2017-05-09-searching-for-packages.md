@@ -21,12 +21,12 @@ This is where [Algolia](https://www.algolia.com/), the company I work for, comes
 On the 22nd December of 2016, Algolia engineers via [yarnpkg/website#322](https://github.com/yarnpkg/website/pull/322) then ten days later it got merged and instant-search for JavaScript packages was available on our website. At first there was no package details pages.
 
 Early 2017, the core team of Yarn and Algolia team met for a one day brainstorming in London. The goal was to think about the package details page and evolutions of the search interface. Algolia proposed [invision](https://www.invisionapp.com/) design views of what search could be and from that we drafted a [master plan](https://gist.github.com/vvo/c801fb8b653eda9fb17de60987476b5e)!
- 
- ## What makes it different
+
+## What makes it different
 
 ### Show results ⚡️ instantly
 
-![demo of the Yarn search](/assets/posts/2017-05-09-searching-for-packages/search.gif)
+![demo of the Yarn search](/assets/posts/2017-05-09-searching-for-packages/search.gif){:class="img-fluid"}
 
 Instead of showing a dropdown of results, we chose to replace the page completely with the search results. This requires more data to be available immediately, but gives more context on the choices you make while searching for a fitting package. Having the search page be the main entry point will make sure that you don't need to know exactly what you want before "committing" to a search.
 
@@ -36,7 +36,7 @@ After using npm search many times, we knew what was missing and what was superfl
 
 Here's a comparison between the two search results pages (npm on the left, Yarn on the right):
 
-![npm search results on the left, Yarn search results on the right](/assets/posts/2017-05-09-searching-for-packages/npm-yarn-search.png)
+![npm search results on the left, Yarn search results on the right](/assets/posts/2017-05-09-searching-for-packages/npm-yarn-search.png){:class="img-fluid"}
 
 Some metadata the Yarn search is providing on search results that npm does not:
 - number of downloads indicator
@@ -224,19 +224,23 @@ Right now we don't have an automated system for giving out API keys yet, but you
 There are already two other projects made with the packages API:
 
 ### Atom Autocomplete Module Import
-➡️ [GitHub](https://github.com/algolia/atom-autocomplete-module-import)
-➡️ [Atom marketplace](https://atom.io/packages/autocomplete-module-import)
-➡️ [blogpost]()
 
-![importing a package with atom npm autocomplete](https://camo.githubusercontent.com/53350e9c6d303f60101e1644605fe62f529e45f2/687474703a2f2f672e7265636f726469742e636f2f643576695542385859372e676966)
+➡️ [GitHub](https://github.com/algolia/atom-autocomplete-module-import)
+
+➡️ [Atom marketplace](https://atom.io/packages/autocomplete-module-import)
+
+➡️ [blogpost](https://blog.algolia.com/atom-plugin-install-npm-module/)
+
+![importing a package with atom npm autocomplete](https://camo.githubusercontent.com/53350e9c6d303f60101e1644605fe62f529e45f2/687474703a2f2f672e7265636f726469742e636f2f643576695542385859372e676966){:class="img-fluid"}
 
 This was made by two colleagues at Algolia, [Gianluca](https://twitter.com/proudlygeek) and [Raymond](https://twitter.com/rayrutjes) after having the idea during a Happy Hour. It allows you to search for packages inline in your editor, and install it with Yarn or npm.
 
 ### jsDelivr search
+
 ➡️ [live](https://www.jsdelivr.com)
+
 ➡️ [GitHub](https://github.com/jsdelivr/www.jsdelivr.com)
 
-// todo: gif
-![searching on jsDelivr]()
+![searching on jsDelivr](/assets/posts/2017-05-09-searching-for-packages/jsdelivr.png){:class="img-fluid"}
 
 jsDelivr is free CDN for all packages on npm. They have been using Algolia since before this index existed, but switched to reuse this index when they switched to their [new architecture](https://www.jsdelivr.com/blog/jsdelivr-reloaded-2017/).
