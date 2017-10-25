@@ -192,29 +192,25 @@ The stargazers and commit activity are fetched with the GitHub API without a spe
 
 What we currently made for the Yarn website is a proof of concept. We believe in the power of community and allow anyone to use the search index made by us to be used for logical or off-the-charts 🆒 ideas.
 
-Right now we don't have an automated system for giving out API keys yet, but you can request one by [filling out the form](//todo: the form). You will then get an Algolia API key for the search index with `search` and `browse` as capabilities. You can read more about how to use this on the [main documentation]() of Algolia.
+Right now we don't have an automated system for giving out API keys yet, but you can request one by [filling out the form](//todo: the form). You will then get an Algolia API key for the search index with `search` and `browse` as capabilities. You can read more about how to use this on the [main documentation](https://www.algolia.com/doc/) of Algolia.
 
 // todo: button
 <a href="" class="btn">Request an API key here</a>
 
 There are already two other projects made with the packages API:
 
-### Atom npm autocomplete
-// todo: links
-➡️ [GitHub]()
-➡️ [Atom marketplace]()
+### Atom Autocomplete Module Import
+➡️ [GitHub](https://github.com/algolia/atom-autocomplete-module-import)
+➡️ [Atom marketplace](https://atom.io/packages/autocomplete-module-import)
 ➡️ [blogpost]()
 
-// todo: gif
-![importing a package with atom npm autocomplete]()
+![importing a package with atom npm autocomplete](https://camo.githubusercontent.com/53350e9c6d303f60101e1644605fe62f529e45f2/687474703a2f2f672e7265636f726469742e636f2f643576695542385859372e676966)
 
-// todo: links
-This was made by two colleagues at Algolia, [Gianluca]() and [Raymond]() after having the idea during a Happy Hour. It allows you to search for packages inline in your editor, and install it with Yarn or npm.
+This was made by two colleagues at Algolia, [Gianluca](https://twitter.com/proudlygeek) and [Raymond](https://twitter.com/rayrutjes) after having the idea during a Happy Hour. It allows you to search for packages inline in your editor, and install it with Yarn or npm.
 
 ### jsDelivr search
-// todo: links
-➡️ [live]()
-➡️ [GitHub]()
+➡️ [live](https://www.jsdelivr.com)
+➡️ [GitHub](https://github.com/jsdelivr/www.jsdelivr.com)
 
 // todo: gif
 ![searching on jsDelivr]()
