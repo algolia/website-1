@@ -210,9 +210,9 @@ docs_workspaces_title: Workspaces
 docs_workspaces_description: |
   Link together your projects for easier maintenance.
 
-docs_workspaces: Reusing Yarn search
-docs_workspaces_title: Reusing Yarn search
-docs_workspaces_description: |
+docs_reusing_yarn_search: Reusing Yarn search
+docs_reusing_yarn_search_title: Reusing Yarn search
+docs_reusing_yarn_search_description: |
   How to make your own projects using the search data used for Yarn.
 
 yarn_organization_title: Yarn Organization
